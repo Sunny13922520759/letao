@@ -1,0 +1,111 @@
+// 公共类的less文件
+@main-color: #006699;
+* {
+    // 去除所有的默认的margin和padding
+    margin: 0;
+    padding: 0; // 设置移动端触摸的样式为透明
+    -webkit-tap-highlight-color: transparent; // 防止边框和padding撑大盒子超出屏幕宽度出现滚动条
+    box-sizing: border-box;
+}
+
+input {
+    //去除内外边框
+    border: 0;
+    outline: none;
+}
+
+a {
+    // 去掉下划线
+    text-decoration: none;
+}
+
+li {
+    // 去掉li标签的默认样式
+    list-style: none;
+}
+
+img {
+    // 去除边框
+    border: 0; // 设置图片的垂直对齐方式为中线对齐
+    vertical-align: middle;
+}
+
+// 头部区域
+#header {
+    height: 45px;
+    background-color: @main-color;
+    position: fixed;
+    top: 0;
+    z-index: 999; // 因定位了,则需要确定宽和高,则一定的要写宽100%;
+    width: 100%;
+    >h4 {
+        font-weight: normal;
+        line-height: 45px;
+        text-align: center;
+        color: #fff; // 去除margin上下px;
+        margin: 0;
+    }
+    .fa-search {
+        color: #fff;
+        position: absolute;
+        padding: 3px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.layOut{
+    padding:45px 0 60px;
+    width: 100%;
+    height: 100%;
+}
+
+// body{
+   
+// }
+// 主体区域
+#main {
+    position: relative;
+height: 100%;
+
+}
+
+
+// 底部区域
+#footer {
+    background-color: @main-color;
+    padding: 5px 0px;
+    position: fixed;
+    height: 50px;
+    bottom:0px;
+    width: 100%;
+    z-index: 999;
+    .mui-row {
+        >div {
+            text-align: center;
+      
+            >a {
+                display: block;
+                color:#fff;
+                font-size: 16px;
+                &.active{
+                    color:darkorange;
+                    >span{
+                        color:darkorange;
+                    }
+                }
+
+                >span {
+                    margin-top:5px;
+                    display:block;
+                    color:#fff;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
