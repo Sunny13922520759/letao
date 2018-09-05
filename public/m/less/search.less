@@ -1,0 +1,63 @@
+//引入公共的样式文件
+@import "./base.less";
+//主体区域
+#main {
+    // 搜索表单区域
+    background-color: #fff;
+    .search-form {
+        padding: 10px;
+        display: flex;
+        .input-search {
+            flex: 1;
+            height: 30px;
+            margin: 0;
+            text-align: left;
+            background-color: #fff;
+            border: 1px solid @main-color;
+            font-size: 14px;
+            border-radius: 6px 0px 0px 6px;
+        }
+        .btn-search {
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 8px;
+            background-color: @main-color;
+            border-radius: 0px 6px 6px 0px;
+        }
+    } // 搜索历史记录
+    .search-history {
+        font-size:14px;
+        padding:0 10px;
+        //标题
+        .title {
+            color:#666;
+            >a {
+                >i {
+                    color:#666;
+                }
+            }
+        } // 历史记录
+        .content {
+            >ul{
+                border:1px solid #ccc;
+                >li{
+                    padding: 0 5px;
+                    border-bottom:1px solid #ccc;
+                    &:last-of-type{
+                        border-bottom:none;
+                    }
+                    >a{
+                        color:#666;
+                        font-size:12px;
+                       
+                    }
+                    >i{
+                        color:#666;
+                        padding:4px 0px;
+                    }
+                }
+            }
+        }
+    }
+}
