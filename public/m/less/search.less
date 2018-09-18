@@ -2,62 +2,63 @@
 @import "./base.less";
 //主体区域
 #main {
-    // 搜索表单区域
+    // 搜索表单区域 
     background-color: #fff;
     .search-form {
-        padding: 10px;
+        padding: 0.1rem;
         display: flex;
         .input-search {
             flex: 1;
-            height: 30px;
+            height: 0.3rem;
             margin: 0;
             text-align: left;
             background-color: #fff;
-            border: 1px solid @main-color;
-            font-size: 14px;
-            border-radius: 6px 0px 0px 6px;
-        }
+            border: 0.01rem solid @main-color;
+            font-size: 0.14rem;
+            border-radius: 0.06rem 0rem 0rem 0.06rem;
+       }
         .btn-search {
-            width: 60px;
-            height: 30px;
+            width: 0.6rem;
+            height: 0.3rem;
             text-align: center;
-            line-height: 8px;
+            line-height: 0.08rem;
             background-color: @main-color;
-            border-radius: 0px 6px 6px 0px;
-        }
-    } // 搜索历史记录
+            border-radius: 0rem 0.06rem 0.06rem 0rem;
+       }
+   }
+    // 搜索历史记录 
     .search-history {
-        font-size:14px;
-        padding:0 10px;
-        //标题
+        font-size:0.14rem;
+        padding:0 0.1rem;
+        //标题 
         .title {
             color:#666;
             >a {
                 >i {
                     color:#666;
-                }
-            }
-        } // 历史记录
-        .content {
+               }
+           }
+       }
+        // 历史记录
+         .content {
             >ul{
-                border:1px solid #ccc;
+                border:0.01rem solid #ccc;
                 >li{
-                    padding: 0 5px;
-                    border-bottom:1px solid #ccc;
+                    padding: 0 0.05rem;
+                    border-bottom:0.01rem solid #ccc;
                     &:last-of-type{
                         border-bottom:none;
-                    }
+                   }
                     >a{
                         color:#666;
-                        font-size:12px;
-                       
-                    }
+                        font-size:0.12rem;
+                   }
                     >i{
                         color:#666;
-                        padding:4px 0px;
-                    }
-                }
-            }
-        }
-    }
+                        padding:0.04rem 0rem;
+                   }
+               }
+           }
+       }
+   }
 }

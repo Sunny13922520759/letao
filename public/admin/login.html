@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>乐淘登录页面</title>
+    <!-- 引入字体图标的样式文件 -->
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css">
+    <!-- 引入bootstrap的样式文件 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 引入自写的less文件 -->
+    <link rel="stylesheet/less" href="./less/login.less">
+    <!-- 引入less.js文件 -->
+    <script src="./lib/less/less.js"></script>
 </head>
+
 <body>
+    <!-- 静态表单 -->
+   <div class="login">
+       <div class="login-wrap">
+    <div class="user-img">
+            <img src="images/monkey.png" alt="">
+        </div>
+    <form class="form-horizontal login-form clearfix" >
+            <div class="alert alert-warning" role="alert"></div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control username" placeholder="请输入用户名">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon2"><i class="fa fa-key"></i></span>
+            <input type="password" class="form-control password" placeholder="请输入密码">
+        </div>
+            <button type="button" class="btn-primary form-control btn-block">登录</button>
+    </form>
+</div>
+</div>
+    <!-- 引入jquery.js文件 -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入bootstrap的js文件 -->
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 引入模板引擎的js文件 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入自写的登录的文件 -->
+    <script src="./js/login.js"></script>
+
 </body>
+
 </html>

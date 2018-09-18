@@ -30,105 +30,213 @@ img {
     vertical-align: middle;
 }
 
-.clearfix::after{
-    content:"";
+.clearfix::after {
+    content: "";
     display: block;
     clear: both;
     height: 0;
     visibility: hidden;
 }
-.clearfix{
+
+.clearfix {
     *zoom: 1;
 }
 
-// 头部区域
+html{
+    font-size:100px;
+};
+body{
+    font-size:0.16rem;
+};
+html, body {
+    width: 100%;
+    height: 100%;
+}
+.layOut {
+    padding: 0.45rem 0 0.5rem;
+    width: 100%;
+    height: 100%;
+}
+// 头部区域 
 #header {
-    height: 45px;
+    height: 0.45rem;
     background-color: @main-color;
     position: fixed;
     top: 0;
-    z-index: 999; // 因定位了,则需要确定宽和高,则一定的要写宽100%;
+    z-index: 999;
+    // 因定位了,则需要确定宽和高,则一定的要写宽100%;
     width: 100%;
-    padding:8px 30px;
-    >form{
->input{
-    height: 30px;
-    background-color: #fff;
-    text-align: left;
-}
-    }
-    .fa-arrow-left{
+    padding: 0.08rem 0.3rem;
+    >form {
+        >input {
+            height: 0.3rem;
+            background-color: #fff;
+            text-align: left;
+       }
+   }
+    .fa-arrow-left {
         position: absolute;
-        left:5px;
-        color:#fff;
-        top:12px;
-    }
+        left: 0.05rem;
+        color: #fff;
+        top: 0.12rem;
+   }
     >h4 {
         font-weight: normal;
-        line-height: 30px;
+        line-height: 0.3rem;
         text-align: center;
-        color: #fff; // 去除margin上下px;
+        color: #fff;
+        // 去除margin上下px;
         margin: 0;
-        // padding:4px
-    }
-    .fa-search {
+        // padding:0.04rem 
+   }
+    .fa-search, .fa-home,.fa-refresh {
         color: #fff;
         position: absolute;
-        padding: 3px;
-        top: 12px;
-        right: 5px;
-    }
+        padding: 0.03rem;
+        top: 0.12rem;
+        right: 0.05rem;
+   }
 }
-
-html,body{
-    width: 100%;
-    height: 100%;
-}
-.layOut{
-    padding:45px 0 50px;
-    width: 100%;
-    height: 100%;
-}
-
-// 主体区域
+// 主体区域 
 #main {
     position: relative;
-height: 100%;
-
+    height: 100%;
 }
-
-
+.search-form {
+    padding: 0.1rem;
+    display: flex;
+    .input-search {
+        flex: 1;
+        height: 0.3rem;
+        margin: 0;
+        text-align: left;
+        background-color: #fff;
+        border: 0.01rem solid @main-color;
+        font-size: 0.14rem;
+        border-radius: 0.06rem 0rem 0rem 0.06rem;
+   }
+    .btn-search {
+        width: 0.6rem;
+        height: 0.3rem;
+        text-align: center;
+        line-height: 0.08rem;
+        background-color: @main-color;
+        border-radius: 0rem 0.06rem 0.06rem 0rem;
+   }
+}
+.product-content {
+    .mui-row {
+        >div {
+            padding: 0 0.05rem;
+            &:nth-of-type(n+3) {
+                .product {
+                    margin-top: 0.1rem;
+               }
+           }
+            .product {
+                text-align: center;
+                padding-bottom: 0.1rem;
+                box-shadow: 0rem 0rem 0.05rem #ccc;
+                .product-img {
+                    display: block;
+                    >img {
+                        width: 100%;
+                   }
+               }
+                .product-name {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                   /*控制要显示几行*/
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+               }
+                .product-price {
+                    font-size: 0.12rem;
+                    >span {
+                        color: #f00;
+                        margin-right: 0.1rem;
+                   }
+                    >del {
+                        color: #ccc;
+                   }
+               }
+                button {
+                    background-color: @main-color;
+               }
+           }
+       }
+   }
+}
+// 输入框 
+.mui-input-row {
+    margin-top: 0.1rem;
+    border: 0.01rem solid #ccc;
+    >label {
+        width: 30%;
+   }
+    >input {
+        width: 70%;
+   }
+}
+// 登录框
+ .mui-button-row{
+    margin-top:0.2rem;
+    border: 0.01rem solid #ccc;
+    >button{
+        width: 100%;
+        height: 100%;
+   }
+}
 // 底部区域
-#footer {
+ #footer {
     background-color: @main-color;
-    padding: 5px 0px;
+    padding: 0.05rem 0rem;
     position: fixed;
-    height: 50px;
-    bottom:0px;
+    height: 0.5rem;
+    bottom: 0rem;
     width: 100%;
     z-index: 999;
     .mui-row {
         >div {
             text-align: center;
-      
             >a {
                 display: block;
-                color:#fff;
-                font-size: 16px;
-                &.active{
-                    color:darkorange;
-                    >span{
-                        color:darkorange;
-                    }
-                }
-
+                color: #fff;
+                font-size: 0.16rem;
+                &.active {
+                    color: darkorange;
+                    >span {
+                        color: darkorange;
+                   }
+               }
                 >span {
-                    margin-top:5px;
-                    display:block;
-                    color:#fff;
-                    font-size: 12px;
-                }
-            }
-        }
-    }
+                    margin-top: 0.05rem;
+                    display: block;
+                    color: #fff;
+                    font-size: 0.12rem;
+               }
+           }
+       }
+   }
+}
+//公共加载中样式 //遮罩层
+ .mask{
+    width: 100%;
+    height: 100%;
+    padding:0.45rem 0 0.5rem;
+    background-color:#ccc;
+    position: fixed;
+    top:0rem;
+    left:0rem;
+    z-index:998;
+    display: none;
+    img{
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+   }
 }

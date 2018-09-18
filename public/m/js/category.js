@@ -39,18 +39,24 @@ Letao.prototype = {
         // 发送异步请求
         $.ajax({
             url: '/category/queryTopCategory',
+            // 再发送请求前
+            beforeSend: function () {
+                $('.mask').show();
+            },
             success: function (obj) {
+            
                 // console.log(obj);
                 var html = template('categoryTmp', {
                     list: obj.rows
                 });
                 // console.log(html);
                 $('.category-left ul').html(html);
+                $('.mask').hide();
             }
         })
     },
     // 分类的点击事件
-    categoryClick: function (id) {
+    categoryClick: function () {
         //给ul点击事件,事件委托
         var that = this;
         // console.log(this);
@@ -69,14 +75,18 @@ Letao.prototype = {
     getBrand: function (id) {
         $.ajax({
             url: '/category/querySecondCategory',
+            
             data: {
                 'id': id
             },
             success: function (obj) {
                 // console.log(obj);
-                var html=template('brandTmp',{list:obj.rows});
+                var html = template('brandTmp', {
+                    list: obj.rows
+                });
                 // console.log(html);
                 $('.category-right .mui-row').html(html);
+               
             }
         })
     }

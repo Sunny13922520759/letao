@@ -1,0 +1,92 @@
+// 引入公共类的base.lee文件
+@import 'base.less';
+body{
+    padding-bottom:0.33rem;
+}
+#main {
+    #refreshContainer{
+        height: 100%;
+        background-color: #fff;
+   }
+    .cartList {
+        a {
+            white-space: normal;
+       }
+        .mui-pull-left {
+            width: 0.6rem;
+            .mui-media-object {
+                display: block;
+           }
+       }
+        .mui-media-body {
+            font-size: 0.14rem;
+            .product-name {
+                color: #666;
+           }
+            .new-price {
+                color: #ff3300;
+           }
+            .old-price {
+                color: #ccc;
+           }
+            .product-size {
+                color: #aaa;
+                >span {
+                    margin-left: 0.05rem;
+               }
+           }
+            .product-num {
+                position: absolute;
+                right: 0.42rem;
+                bottom: 0.28rem;
+                color: #aaa;
+                font-size: 0.12rem;
+           }
+       }
+   }
+}
+//订单总额 
+.cart_order {
+    width: 100%;
+    position: fixed;
+    bottom: 0.5rem;
+    color: #ff3300;
+    line-height: 0.33rem;
+    padding-left: 0.1rem;
+    font-size: 0.14rem;
+    font-weight: 600;
+    span {
+        margin-left: 0.1rem;
+   }
+    .btn-order {
+        float: right;
+        width: 1rem;
+   }
+}
+.product-size{
+    font-size:0.14rem;
+    .size-num{
+        display: inline-block;
+        width: 0.28rem;
+        height: 0.28rem;
+        text-align: center;
+        line-height: 0.28rem;
+        border:0.01rem solid #ccc;
+        &.active{
+            background-color: #fa672d;
+       }
+        &:first-of-type{
+            margin-left:0.05rem;
+       }
+   }
+}
+.product-num{
+    font-size:0.14rem;
+    .mui-numbox{
+        height: 0.3rem;
+        margin-left:0.1rem;
+   }
+    .num{
+        padding:0rem 0.05rem;
+   }
+}

@@ -33,7 +33,6 @@ Search.prototype = {
                 alert('请输入相关商品名称');
                 return;
             }
-
             // 把搜索的内容添加到本地存储li
             //定义一个对象存储数据
             var searchObj = {
@@ -49,8 +48,8 @@ Search.prototype = {
             historyList.push(searchObj);
             //添加到本地存储里
             localStorage.setItem('historyList', JSON.stringify(historyList));
-
             that.queryHistory();
+            location.href = 'productlist.html?search='+search;
 
         })
 

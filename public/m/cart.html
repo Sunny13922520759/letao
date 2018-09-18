@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘移动端购物车</title>
+    <!-- 引入mui的框架css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标的css文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入less的css文件 -->
+    <link rel="stylesheet/less" href="./less/cart.less">
+    <!-- 引入less的js文件 -->
+    <script src="./lib/less/less.js"></script>
+    <!-- 引入rem文件 -->
+   <script src="./js/rem.js"></script>
+
+</head>
+
+<body>
+    <div class="layOut">
+        <!-- 头部区域 -->
+        <header id="header">
+            <a href="javascript:history.back();" class="fa fa-arrow-left"></a>
+            <h4>购物车</h4>
+            <a href="javascript:void(0);" class="icon_refresh fa fa-refresh" aria-hidden="true"></a>
+        </header>
+        <!-- 主体区域 -->
+        <main id="main">
+            <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 购物车列表 -->
+                    <div class="cartList">
+                        <ul class="mui-table-view">
+                            <!-- <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;" class="mui-navigate-right">
+                            <div class="mui-pull-left">
+                                <img class="mui-media-object " src="/mobile/images/detail.jpg">
+                                <input type="checkbox">
+                            </div>
+                            <div class="mui-media-body">
+                                <p class="product-name">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                <div class="product-price">
+                                    <span class="new-price">¥499.1</span>
+                                    <del class="old-price">¥4999.1</del>
+                                </div>
+                                <div class="product-size">鞋码:<span>37</span></div>
+                                <div class="product-num">x<span>1</span>双</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;" class="mui-navigate-right">
+                            <div class="mui-pull-left">
+                                <img class="mui-media-object " src="/mobile/images/detail.jpg">
+                                <input type="checkbox">
+                            </div>
+                            <div class="mui-media-body">
+                                <p class="product-name">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                <div class="product-price">
+                                    <span class="new-price">¥499.1</span>
+                                    <del class="old-price">¥4999.1</del>
+                                </div>
+                                <div class="product-size">鞋码:<span>37</span></div>
+                                <div class="product-num">x<span>1</span>双</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;" class="mui-navigate-right">
+                            <div class="mui-pull-left">
+                                <img class="mui-media-object " src="/mobile/images/detail.jpg">
+                                <input type="checkbox">
+                            </div>
+                            <div class="mui-media-body">
+                                <p class="product-name">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                <div class="product-price">
+                                    <span class="new-price">¥499.1</span>
+                                    <del class="old-price">¥4999.1</del>
+                                </div>
+                                <div class="product-size">鞋码:<span>37</span></div>
+                                <div class="product-num">x<span>1</span>双</div>
+                            </div>
+                        </a>
+                    </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- 订单总额 -->
+        <div class="cart_order">
+            订单总额:<span>¥0.00</span>
+            <button class="mui-btn mui-btn-danger btn-order">生成订单</button>
+        </div>
+          <!-- 遮罩层 -->
+          <div class="mask">
+            <img src="./images/loading.gif" alt="">
+        </div>
+
+        <!-- 底部区域 -->
+        <footer id="footer">
+            <div class="mui-row">
+                <div class="mui-col-xs-3 "><a href="index.html" class="tab_home fa fa-home active"><span>首页</span></a></div>
+                <div class="mui-col-xs-3"><a href="category.html" class="tab_cate fa fa-bars"><span>分类</span></a></div>
+                <div class="mui-col-xs-3"><a href="cart.html" class="tab_cart fa fa-shopping-cart"><span>购物车</span></a></div>
+                <div class="mui-col-xs-3"><a href="user.html" class="tab_user fa fa-user"><span>会员中心</span></a></div>
+            </div>
+        </footer>
+    </div>
+    <!-- 购物车商品列表 -->
+    <script type="text/html" id="cartTmp">
+      {{if data}}
+        {{each data value i}}
+    <li class="mui-table-view-cell mui-media " >
+            <div class="mui-slider-right mui-disabled " data-product-size='{{value.productSize}}' data-size="{{value.size}}" data-product-number="{{value.productNum}}" data-id="{{value.id}}" data-num="{{value.num}}">
+                    <a class="mui-btn mui-btn-blue btn-edit">编辑</a>
+                    <a class="mui-btn mui-btn-red btn-delete">删除</a>
+                </div>
+            <a href="javascript:;" class="mui-slider-handle mui-navigate-right">
+                <div class="mui-pull-left">
+                    <img class="mui-media-object " src="{{value.pic[0].picAddr}}">
+                    <input type="checkbox" data-price="{{value.price}}" data-num="{{value.num}}">
+                </div>
+                <div class="mui-media-body">
+                    <p class="product-name">{{value.proName}}</p>
+                    <div class="product-price">
+                        <span class="new-price">¥{{value.price}}</span>
+                        <del class="old-price">¥{{value.oldPrice}}</del>
+                    </div>
+                    <div class="product-size">鞋码:<span>{{value.size}}</span></div>
+                    <div class="product-num">x<span>{{value.num}}</span>双</div>
+                </div>
+            </a>
+        </li>
+{{/each}}
+{{else}}
+<p>购物车空空如也!!!</p>
+{{/if}}
+</script>
+<!-- 编辑购物车商品 -->
+<script type="text/html" id="editTmp">
+    <div class="product-size">
+            尺码:
+            {{each productSize value}}
+            <span class="size-num {{value==size?'active':''}}" data-size={{value}}>{{value}}</span>
+          {{/each}}
+        </div>
+        <div class="product-num">
+            数量:<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='{{productNum}}'>
+                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                <input class="mui-numbox-input" type="number"  value="{{num}}" />
+                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+            </div>
+            <span>剩余:<span class="num">{{productNum}}</span>件</span>
+        </div>
+</script>
+
+
+
+    </script>
+    <!-- 引入zepto的js文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入模板的js文件 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入主页的js文件 -->
+    <script src="./js/cart.js"></script>
+
+
+
+</body>
+
+</html>

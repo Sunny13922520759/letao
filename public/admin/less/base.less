@@ -1,0 +1,64 @@
+@main-color: #2f4050;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// 去掉内外边框
+input {
+    outline: none;
+    border: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    display: flex;
+    .left {
+        position: fixed;
+        left:0;
+        top:0;
+        width: 180px;
+        height: 100%;
+        background-color: #2f4050;
+        .title {
+            >img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+    .right {
+        flex: 1;
+    }
+}

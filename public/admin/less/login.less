@@ -1,0 +1,57 @@
+// 引入base.less文件
+@import './base.less';
+.login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: @main-color;
+    .login-wrap {
+        width: 500px;
+        height: 340px;
+        margin: 180px auto;
+        background-color: #fff;
+        position: relative;
+        .user-img {
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            left: 50%;
+            top: -60px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            border: 10px solid #fff;
+            img {
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+        .login-form {
+            padding: 80px 60px 0px;
+            .alert{
+                margin-bottom:0;
+                display: none;
+            }
+            .input-group {
+                padding-top: 20px;
+                .input-group-addon {
+                    padding: 12px 20px;
+                    i {
+                        font-size: 20px;
+                    }
+                    input {
+                        font-size: 20px;
+                    }
+                }
+                .form-control {
+                    height: 46px;
+                    font-size: 16px;
+                }
+            }
+            .btn-block {
+                margin-top: 20px;
+                height: 46px;
+                font-size: 16px;
+            }
+        }
+    }
+}

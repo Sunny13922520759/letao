@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘移动端个人中心页面</title>
+    <!-- 引入mui的框架css文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标的css文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入less的css文件 -->
+    <link rel="stylesheet/less" href="./less/user.less">
+    <!-- 引入less的js文件 -->
+    <script src="./lib/less/less.js"></script>
+       <!-- 引入rem文件 -->
+   <script src="./js/rem.js"></script>
+
+</head>
+
+<body>
+    <div class="layOut">
+        <!-- 头部区域 -->
+        <header id="header">
+            <a href="javascript:history.back();" class="fa fa-arrow-left"></a>
+            <h4>个人中心</h4>
+        </header>
+        <!-- 主体区域 -->
+        <main id="main">
+                <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">
+                                    <img class="mui-media-object mui-pull-left" src="images/user.jpg">
+                                    <div class="mui-media-body">
+                                       <span class="userName"></span>
+                                        <p class='mui-ellipsis'>绑定手机:<span class="mobile"></span></p>
+                                    </div>
+                            </a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">账号与安全</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">我的购物车</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right">收货地址管理</a>
+                        </li>
+                    </ul>
+                    <div class="exit-login"><button type="button" class="btn-exit">退出登录</button></div>
+
+        </main>
+
+        <!-- 底部区域 -->
+        <footer id="footer">
+            <div class="mui-row">
+                <div class="mui-col-xs-3 "><a href="index.html" class="tab_home fa fa-home active"><span>首页</span></a></div>
+                <div class="mui-col-xs-3"><a href="category.html" class="tab_cate fa fa-bars"><span>分类</span></a></div>
+                <div class="mui-col-xs-3"><a href="cart.html" class="tab_cart fa fa-shopping-cart"><span>购物车</span></a></div>
+                <div class="mui-col-xs-3"><a href="user.html" class="tab_user fa fa-user"><span>会员中心</span></a></div>
+            </div>
+        </footer>
+    </div>
+ 
+    </script>
+    <!-- 引入zepto的js文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入模板的js文件 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入主页的js文件 -->
+    <script src="./js/user.js"></script>
+
+
+
+</body>
+
+</html>
